@@ -9,7 +9,7 @@ const DevSchema = new Schema({
     type: String,
     required: true,
   },
-  bio: String, //Desc. Por não ser obrigt, não preciso passar um objeto com type
+  bio: String,
   avatar: {
     type: String,
     required: true,
@@ -25,6 +25,5 @@ const DevSchema = new Schema({
 }, {
   timestamps: true,
 });
-// timestamps = createdAt'Data de criação', updateAt'Data da ultima modificação'
 
 module.exports = model('Dev', DevSchema);

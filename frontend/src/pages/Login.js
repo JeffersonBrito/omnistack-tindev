@@ -5,10 +5,10 @@ import api from '../services/api';
 
 import logo from '../assets/logo.svg';
 
-export default function Login ({ history }) {
+export default function Login({ history }) {
   const [username, setUsername] = useState('');
 
-  async function handleSubmit(e) { 
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const response = await api.post('/devs', {
@@ -23,15 +23,13 @@ export default function Login ({ history }) {
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <img src={logo} alt="Tindev" />
-        <input
+        <img src={logo} alt="Tindev"/>
+        <input 
           placeholder="Digite seu usuário no Github"
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
         <button type="submit">Enviar</button>
-        <p className="p-login">Encontre novos companheiros de</p>
-        <p className="p-pro">projetos!</p>
       </form>
     </div>
   );

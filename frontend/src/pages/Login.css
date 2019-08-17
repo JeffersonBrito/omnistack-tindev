@@ -1,4 +1,4 @@
-.login-container{
+.login-container {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -32,25 +32,8 @@
   border-radius: 4px;
   height: 48px;
   font-size: 16px;
-  background: #df4723;
+  background: #DF4723;
   font-weight: bold;
-  color: #fff;
+  color: #FFF;
   cursor: pointer;
-}
-
-.p-login {
-  margin-top: 10px;
-  font-size: 20px;
-  line-height: 30px;
-  max-width: 400px;
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.p-pro {
-  margin-top: 10px;
-  font-size: 20px;
-  line-height: 30px;
-  max-width: 400px;
-  color: rgba(0, 0, 0, 0.8);
-  margin-left: 115px;
 }

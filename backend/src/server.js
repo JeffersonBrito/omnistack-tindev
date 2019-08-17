@@ -1,10 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const env = require('./config/enviroments')
 
 const routes = require('./routes');
-
 
 const app = express();
 const server = require('http').Server(app);
@@ -15,15 +13,12 @@ const connectedUsers = {};
 io.on('connection', socket => {
   const { user } = socket.handshake.query;
 
-    
   connectedUsers[user] = socket.id;
 });
 
-
-
-mongoose.connect(env.BaseUri, {
+mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-jxhrd.mongodb.net/omnistack8?retryWrites=true&w=majority', {
   useNewUrlParser: true
-})
+});
 
 app.use((req, res, next) => {
   req.io = io;
@@ -32,12 +27,8 @@ app.use((req, res, next) => {
   return next();
 });
 
-
 app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-const PORT = process.env.PORT || 3333
-server.listen(PORT);
-
-
+server.listen(3333);
